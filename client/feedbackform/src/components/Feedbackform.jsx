@@ -6,18 +6,18 @@ import QuestionTwo from "./questions/QuestionTwo";
 
 const Feedbackform = () => {
   const [feedBack, setFeedBack] = useState({
-    question1: "daily",
+    question1: "",
     question2: "Information",
     question3: 3,
-    question4s: "",
+    question4: "",
   });
 
   const onChangeHandler = (data) => {
     setFeedBack({ ...feedBack, ...data });
   };
   return (
-    <section className="bg-gray-800 dark:bg-gray-900">
-      <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+    <div className="bg-gray-300 dark:bg-gray-900 ">
+      <div className="py-8 lg:py-16 px-8 mx-auto max-w-screen-md bg-gray-800">
         <h2 className="mb-4 text-4xl tracking-widest  font-bold text-center text-gray-300 dark:text-white">
           FEEDBACK
         </h2>
@@ -35,7 +35,7 @@ const Feedbackform = () => {
           </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
