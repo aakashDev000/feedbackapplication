@@ -12,8 +12,7 @@ export const getRequestData = (req: any, res: any, next: any) => {
     const { data } = req.body;
     res.locals.reqdata = data;
   } else {
-    const query = req.query;
-    res.locals.reqdata = query;
+    res.locals.reqdata = req.query;
   }
 
   next();
@@ -43,17 +42,8 @@ export const schemaValidation =
           },
         },
       });
+      return;
     }
-
-    res.status(400).json({
-      data: {
-        status: 400,
-        data: {
-          type: "VALIDATION_ERROR",
-          data: "Testing Error",
-        },
-      },
-    });
 
     res.locals.reqdata = value;
     next();
