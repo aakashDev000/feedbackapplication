@@ -4,13 +4,15 @@ import QuestionOne from "./questions/QuestionOne";
 import QuestionThree from "./questions/QuestionThree";
 import QuestionTwo from "./questions/QuestionTwo";
 import QuestionFive from "./questions/QuestionFive";
+import { feedbackSubmitAction } from "./service/action";
+import ErrorDisplay from "./ErrorDisplay";
 
 /* The main component */
 const Feedbackform = () => {
   const initialState = {
     question1: "",
     question2: [],
-    question3: 1,
+    question3: 7,
     question4: "",
     question5: "",
   };
@@ -29,7 +31,7 @@ const Feedbackform = () => {
       setFeedBack({ ...feedBack, question2: omitedCheckox });
     }
 
-    if (checked) { 
+    if (checked) {
       setFeedBack({ ...feedBack, question2: [...feedBack.question2, name] });
     }
   };
@@ -37,6 +39,25 @@ const Feedbackform = () => {
   /* Page Reset This function set the inital state to feedback state */
   const resetHandler = () => {
     setFeedBack(initialState);
+    setError({ error: false, errormessages: [] });
+  };
+
+  const [error, setError] = useState({
+    error: false,
+    errormessages: [],
+  });
+
+  const onSubmit = async () => {
+    try {
+      const submitRes = await feedbackSubmitAction({ data: feedBack });
+      console.log("submit***", submitRes);
+    } catch (error) {
+      console.log("error****", error?.data?.data?.data);
+      setError({
+        error: true,
+        errormessages: error?.data?.data?.data,
+      });
+    }
   };
 
   return (
@@ -45,6 +66,9 @@ const Feedbackform = () => {
         <h2 className="mb-4 text-4xl tracking-widest  font-bold text-center text-gray-300 dark:text-white">
           FEEDBACK
         </h2>
+
+        {error.error && <ErrorDisplay errormessages={error.errormessages} />}
+
         <div className="space-y-8">
           {/* Each component has one question and handled one question and return the value of the component */}
           <QuestionOne onChange={onChangeHandler} value={feedBack.question1} />
@@ -67,7 +91,13 @@ const Feedbackform = () => {
             >
               Reset
             </button>
+            {error.error && (
+              <div className=" text-red-600 px-1 items-center flex border-pink-900 text-xs border rounded-md">
+                <>Error Occured see the top</>
+              </div>
+            )}
             <button
+              onClick={onSubmit}
               type="submit"
               className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
