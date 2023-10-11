@@ -1,19 +1,15 @@
 const QuestionThree = ({ onChange, value }) => {
-  const userExperienceNumberBasedValueReturn = (question3) => {
-    const userExperience = {
-      1: "Very Bad",
-      2: "Bad",
-      3: "Not Good",
-      4: "Okay",
-      5: "Good",
-      6: "Very Good",
-      7: "Excellent",
-      8: "Outstanding",
-      9: "Exceptional",
-      10: "Perfect",
-    };
-
-    return userExperience[question3];
+  const userExperience = {
+    1: "Very Bad",
+    2: "Bad",
+    3: "Not Good",
+    4: "Okay",
+    5: "Good",
+    6: "Very Good",
+    7: "Excellent",
+    8: "Outstanding",
+    9: "Exceptional",
+    10: "Perfect",
   };
 
   return (
@@ -32,7 +28,7 @@ const QuestionThree = ({ onChange, value }) => {
               : "border rounded-md p-1 px-2 bg-green-600"
           }
         >
-          {userExperienceNumberBasedValueReturn(value)}
+          {userExperience[value]}
         </span>
         <span
           className={

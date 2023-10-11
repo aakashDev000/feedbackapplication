@@ -54,7 +54,11 @@ export const insertFeddbackData = async (
 
     const insertFeedback = await mongodb
       .collection("userfeedback")
-      .insertOne({ feedbackid, ...reqdataKeyModified(reqdata) });
+      .insertOne({
+        feedbackid,
+        createdat: new Date(),
+        ...reqdataKeyModified(reqdata),
+      });
 
     if (insertFeedback.acknowledged) {
       return res.status(201).json({

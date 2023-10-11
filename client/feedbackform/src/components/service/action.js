@@ -15,7 +15,7 @@ export const feedbackSubmitAction = ({ data }) => {
       })
       .catch((err) => {
         console.log("err*********", err.response);
-        reject(err.response.data);
+        reject(err.response?.data);
       });
   });
 };

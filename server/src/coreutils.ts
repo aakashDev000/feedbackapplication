@@ -27,9 +27,7 @@ export const schemaValidation =
 
     if (error) {
       const errData = error.details.map((err: Joi.ValidationErrorItem) => {
-        const { message /* path = []  */ } = err;
-        //   const pathMerge = path.toString();
-        //   return `${message}(${pathMerge})`;
+        const { message } = err;
         return `${message}`;
       });
 

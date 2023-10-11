@@ -38,4 +38,12 @@ const feedbackSubmitionValidator = Joi.object({
     .messages(errorMessage({ key: "Enter your birthday?" })),
 });
 
-export { feedbackSubmitionValidator };
+const uuidValidator = Joi.object({
+  feedbackid: Joi.string()
+    .trim()
+    .length(36)
+    .required()
+    .messages(errorMessage({ key: "feedbackid" })),
+});
+
+export { feedbackSubmitionValidator,uuidValidator };
