@@ -7,6 +7,7 @@ import QuestionFive from "./questions/QuestionFive";
 import { feedbackSubmitAction } from "./service/action";
 import ErrorDisplay from "./ErrorDisplay";
 import NavTheme from "./NavTheme";
+import { useNavigate } from "react-router-dom";
 
 /* The main component */
 const Feedbackform = () => {
@@ -17,6 +18,8 @@ const Feedbackform = () => {
     question4: "",
     question5: "",
   };
+
+  const goto = useNavigate();
 
   const [feedBack, setFeedBack] = useState(initialState);
 
@@ -57,9 +60,14 @@ const Feedbackform = () => {
     try {
       const submitRes = await feedbackSubmitAction({ data: feedBack });
       setError({ error: false, errormessages: [] });
-      console.log("submit***", submitRes);
+      const {
+        data: { feedbackid },
+      } = submitRes;
+
+      if (feedbackid) {
+        goto(`/success/${feedbackid}`);
+      }
     } catch (error) {
-      console.log("error****", error?.data?.data?.data);
       setError({
         error: true,
         errormessages: error?.data?.data?.data,

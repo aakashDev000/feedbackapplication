@@ -10,7 +10,7 @@ export const getFeddbackData = async (_: any, res: any, __: NextFunction) => {
     const { feedbackid } = reqdata;
     const feedBackData = await mongodb
       .collection("userfeedback")
-      .findOne({ feedbackid }, { projection: { _id: 0 } });
+      .findOne({ feedbackid }, { projection: { _id: 0, feedbackid:0 } });
 
     if (!feedBackData) {
       return res.status(400).json({

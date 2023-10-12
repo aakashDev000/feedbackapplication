@@ -5,6 +5,7 @@ import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
+import FeedbackView from "./components/FeedbackView";
 
 export const router = createBrowserRouter([
   {
@@ -12,8 +13,12 @@ export const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/success",
+    path: "/home",
     element: <App />,
+  },
+  {
+    path: "/success/:feedbackid",
+    element: <FeedbackView />,
   },
 ]);
 
