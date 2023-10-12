@@ -2,12 +2,12 @@
 import axios from "axios";
 // dotenv.config();
 
-const requestUrl = process.env.API_URL || "http://localhost:9000/api/";
+const requestUrl = process.env.REACT_APP_API_URL || "http://localhost:9000";
 
 export const feedbackSubmitAction = ({ data }) => {
   return new Promise((resolve, reject) => {
     axios
-      .post(`${requestUrl}/feedback/submit`, { data })
+      .post(`${requestUrl}/api/feedback/submit`, { data })
       .then((res) => {
         if (res?.status === 201) {
           resolve(res?.data?.data);
@@ -23,7 +23,7 @@ export const feedbackSubmitAction = ({ data }) => {
 export const feedbackViewAction = ({ feedbackid }) => {
   return new Promise((resolve, reject) => {
     axios
-      .get(`${requestUrl}feedback/view`, { params: { feedbackid } })
+      .get(`${requestUrl}/api/feedback/view`, { params: { feedbackid } })
       .then((res) => {
         if (res?.status === 201) {
           resolve(res?.data?.data);
