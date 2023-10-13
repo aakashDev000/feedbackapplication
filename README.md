@@ -40,7 +40,7 @@ $ git clone https://github.com/aakashDev000/feedbackapplication.git
 
 ## pre-reqs
 
-- Mongodb (optional)
+- [MongoDB](https://www.mongodb.com/) (optional)
 
 ## Install
 
