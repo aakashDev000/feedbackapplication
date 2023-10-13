@@ -55,8 +55,8 @@ $ npm install
 ### Description
 
 - Create `.env` file in server folder.
-- Add whichever port you want the server to run on or it will automatically run on port `9000`
-- If you don't have mongodb no problem there is Automatically creating the mongodb-memory-server in server
+- Add whichever port you want the server to run on or it will automatically run on port `9000`.
+- If you don't have mongodb no problem there is Automatically creating the mongodb-memory-server in server.
 - Once you terminate the server the mongodb memory server will also stop and then the stored data cannot be retrieved..
 - `MONGO_URL` (optional)
 - `PORT` (optional)
@@ -91,7 +91,7 @@ $ npm install
 ### Description
 
 - Create `.env` file in client folder.
-- which port used in server add the port on `REACT_APP_API_URL` or it will automatically run on port `9000`
+- which port used in server add the port on `REACT_APP_API_URL` or it will automatically run on port `9000`.
 
 ```
 $ REACT_APP_API_URL = "http://localhost:9000"
