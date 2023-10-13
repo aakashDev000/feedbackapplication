@@ -12,15 +12,14 @@
 - [Javascript](https://www.javascript.com/)
 
 - [Typescript](https://www.typescriptlang.org/)
-  
 - [Joi](https://joi.dev/) (validation)
 
 - [Express](https://expressjs.com/)
 
-- [MongoDb](https://www.mongodb.com/)
+- [MongoDB](https://www.mongodb.com/)
 - [mongodb-memory-server](https://www.npmjs.com/package/mongodb-memory-server) (temporary instance create)
 
-- [React](https://reactjs.org/)
+- [React JS](https://reactjs.org/)
 
 ## Pre-reqs
 
@@ -57,8 +56,8 @@ $ npm install
 
 - Create `.env` file in server folder.
 - Add whichever port you want the server to run on or it will automatically run on port `9000`
-- If you don't have mongodb no problem there is Automatically create mongodb-memory-server in server
-- Once you terminate server mongodb memory server also terminated, can't recover stored data.
+- If you don't have mongodb no problem there is Automatically creating the mongodb-memory-server in server
+- Once you terminate the server the mongodb memory server will also stop and then the stored data cannot be retrieved..
 - `MONGO_URL` (optional)
 - `PORT` (optional)
 
