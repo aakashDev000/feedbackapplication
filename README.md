@@ -84,7 +84,7 @@ $ npm run start
 - Open new terminal
 
 ```
-$ cd client
+$ cd client/feedbackform
 $ npm install
 ```
 
