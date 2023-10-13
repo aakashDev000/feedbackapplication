@@ -3,7 +3,7 @@
 ## Introduction
 
 - The project name is the Feedback Application.
-- Create Feedback and view submitted feed back from database
+- Create Feedback and view submitted feed back from database.
 
 ## Languages & tools
 
