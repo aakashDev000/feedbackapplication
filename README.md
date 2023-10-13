@@ -57,7 +57,7 @@ $ npm install
 - Create `.env` file in server folder.
 - Add whichever port you want the server to run on or it will automatically run on port `9000`.
 - If you don't have mongodb no problem there is Automatically creating the mongodb-memory-server in server.
-- Once you terminate the server the mongodb memory server will also stop and then the stored data cannot be retrieved..
+- Once you terminate the server the mongodb memory server will also stop and then the stored data cannot be retrieved.
 - `MONGO_URL` (optional)
 - `PORT` (optional)
 
